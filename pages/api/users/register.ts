@@ -33,7 +33,7 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(401).send({ message: "Email_already_exists" });
   }
   const { data } = await axios.post(
-    `https://${projectId}.api.sanity.io/v2021-06-07/data/mutate/${dataset}?returnIds=true`,
+    `https://${projectId}.api.sanity.io/v2023-03-01/data/mutate/${dataset}?returnIds=true`,
     { mutations: createMutations },
     {
       headers: {
