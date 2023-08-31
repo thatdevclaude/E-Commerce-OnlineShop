@@ -80,41 +80,41 @@ const MenuItems: React.FC<Props> = (props) => {
                 ) : null}
               </div>
             ) : (
-              <Link href={`/${item.category}`}>
-                <a
-                  className={`flex items-center mt-3 px-5  cursor-pointer text-sm ${
-                    index === activeMenuItemIndex
-                      ? "md:text-palette-primary"
-                      : ""
+              (<Link
+                href={`/${item.category}`}
+                className={`flex items-center mt-3 px-5  cursor-pointer text-sm ${
+                  index === activeMenuItemIndex
+                    ? "md:text-palette-primary"
+                    : ""
+                }`}
+                onClick={() =>
+                  onMenuItemClickHandler(
+                    item.productsGroup,
+                    item.category,
+                    index
+                  )
+                }
+                onMouseOver={() =>
+                  props.onMouseOver?.(
+                    item.productsGroup,
+                    index,
+                    item.category
+                  )
+                }>
+
+                <item.icon className="w-6 h-6 " />
+                <div
+                  className={`mx-4 grow ${
+                    !item.productsGroup ? "text-gray-400 font-normal" : ""
                   }`}
-                  onClick={() =>
-                    onMenuItemClickHandler(
-                      item.productsGroup,
-                      item.category,
-                      index
-                    )
-                  }
-                  onMouseOver={() =>
-                    props.onMouseOver?.(
-                      item.productsGroup,
-                      index,
-                      item.category
-                    )
-                  }
                 >
-                  <item.icon className="w-6 h-6 " />
-                  <div
-                    className={`mx-4 grow ${
-                      !item.productsGroup ? "text-gray-400 font-normal" : ""
-                    }`}
-                  >
-                    {t[item.category]}
-                  </div>
-                  {item.productsGroup ? (
-                    <ArrowDirection style={{ fontSize: "1rem" }} />
-                  ) : null}
-                </a>
-              </Link>
+                  {t[item.category]}
+                </div>
+                {item.productsGroup ? (
+                  <ArrowDirection style={{ fontSize: "1rem" }} />
+                ) : null}
+
+              </Link>)
             )}
           </li>
         );

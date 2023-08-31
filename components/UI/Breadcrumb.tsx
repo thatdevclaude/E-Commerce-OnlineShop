@@ -42,25 +42,25 @@ const Breadcrumb = () => {
       <nav className="flex py-3 px-2 sm:px-5 leading-6">
         <ul className="flex items-center space-x-1 md:space-x-3">
           <li className="cursor-pointer">
-            <Link href="/">
-              <a className="flex ltr:pr-2 rtl:pl-2">
-                <span>
-                  <BsShop style={{ fontSize: "1.2rem" }} />
-                </span>
-                <span className="ltr:ml-1 rtl:mr-1">{t.mainPage}</span>
-              </a>
+            <Link href="/" className="flex ltr:pr-2 rtl:pl-2">
+
+              <span>
+                <BsShop style={{ fontSize: "1.2rem" }} />
+              </span>
+              <span className="ltr:ml-1 rtl:mr-1">{t.mainPage}</span>
+
             </Link>
           </li>
           {breadcrumbs.map((breadcrumb, i) => {
             return (
               <li className="flex items-center" key={breadcrumb.href}>
                 <span>/</span>
-                <Link href={breadcrumb.href}>
-                  <a className="inline-block px-2">
-                    {t[convertBreadcrumb(breadcrumb.breadcrumb)]
-                      ? t[convertBreadcrumb(breadcrumb.breadcrumb)]
-                      : convertBreadcrumb(breadcrumb.breadcrumb)}
-                  </a>
+                <Link href={breadcrumb.href} className="inline-block px-2">
+
+                  {t[convertBreadcrumb(breadcrumb.breadcrumb)]
+                    ? t[convertBreadcrumb(breadcrumb.breadcrumb)]
+                    : convertBreadcrumb(breadcrumb.breadcrumb)}
+
                 </Link>
               </li>
             );

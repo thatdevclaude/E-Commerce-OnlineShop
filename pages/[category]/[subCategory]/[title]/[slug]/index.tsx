@@ -26,12 +26,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
     "title":category[2],
   }`;
   const products = await client.fetch(query);
-  const paths = products.map((product: ISlugPathsParams) => ({
+  const paths = await products.map((product: ISlugPathsParams) => ({
     params: {
       slug: product.slug.current,
       category: product.category,
-      subCategory: product.subCategory,
-      title: product.title,
+      subCategory: product.subCategory !== null ? product.subCategory.toString() : "sub" ,
+      title: product.title !== null ? product.title.toString() : "sub",
     },
   }));
   return {

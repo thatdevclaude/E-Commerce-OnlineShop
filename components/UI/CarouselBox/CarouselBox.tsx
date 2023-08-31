@@ -84,11 +84,13 @@ const CarouselBox: React.FC<Props> = ({
           {t[`${title}`]}
         </h2>
         {!full ? (
-          <Link href={`/offers`}>
-            <a className="text-palette-primary/80 dark:text-rose-300 text-sm font-bold py-2 px-6 -mb-4 shadow-lg block rounded-lg backdrop-filter backdrop-blur-[10px] bg-palette-card/80">
-              {t.seeAll}
-            </a>
-          </Link>
+          (<Link
+            href={`/offers`}
+            className="text-palette-primary/80 dark:text-rose-300 text-sm font-bold py-2 px-6 -mb-4 shadow-lg block rounded-lg backdrop-filter backdrop-blur-[10px] bg-palette-card/80">
+
+            {t.seeAll}
+
+          </Link>)
         ) : null}
       </div>
       <div

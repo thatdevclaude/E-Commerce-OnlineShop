@@ -18,7 +18,7 @@ const CategorySmBox: React.FC<Props> = ({
   const { t, locale } = useLanguage();
   return (
     <Link href={`${href}`}>
-      <a>
+
         <div
           className={`flex flex-col items-center text-center  ${
             locale === "en"
@@ -35,14 +35,17 @@ const CategorySmBox: React.FC<Props> = ({
               width={45}
               height={45}
               className="drop-shadow-lg"
-            />
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }} />
           </div>
           <h3 className="text-sm md:text-base font-bold mt-2">
             {t[`${categoryTitle}`]}
           </h3>
         </div>
-      </a>
-    </Link>
+
+      </Link>
   );
 };
 

@@ -24,7 +24,10 @@ const ImageSection: React.FC<Props> = ({ imgArray, product }) => {
             width={450}
             height={330}
             className="object-contain md:drop-shadow-xl dark:bg-palette-card"
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </div>
 
         <div className="flex mt-4  md:p-4 w-full max-w-[350px] overflow-auto">
@@ -45,7 +48,10 @@ const ImageSection: React.FC<Props> = ({ imgArray, product }) => {
                   height={70}
                   alt="product img"
                   className="object-contain"
-                />
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto"
+                  }} />
               </div>
             );
           })}

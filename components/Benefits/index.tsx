@@ -19,7 +19,10 @@ const Benefits = () => {
               src={benefitItem.imgSrc}
               alt={benefitItem.title}
               className=""
-            />
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }} />
             <p className="py-2 text-sm md:text-base text-palette-base/90 text-center">
               {t[`${benefitItem.title}`]}
             </p>

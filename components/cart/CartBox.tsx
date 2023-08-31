@@ -45,8 +45,8 @@ const CartBox = () => {
             {t.product}
           </span>
           <span onClick={onCloseCartBoxHandler}>
-            <Link href="/cart">
-              <a className="text-cyan-500">{t.seeCart}</a>
+            <Link href="/cart" className="text-cyan-500">
+              {t.seeCart}
             </Link>
           </span>
         </header>
@@ -76,18 +76,22 @@ const CartBox = () => {
             </div>
             {!userInfo ? (
               <div onClick={onCloseCartBoxHandler}>
-                <Link href={"/login"}>
-                  <a className="py-2 px-3 bg-palette-primary text-[12px] text-palette-side rounded-lg">
-                    {t.loginAndOrder}
-                  </a>
+                <Link
+                  href={"/login"}
+                  className="py-2 px-3 bg-palette-primary text-[12px] text-palette-side rounded-lg">
+
+                  {t.loginAndOrder}
+
                 </Link>
               </div>
             ) : (
               <div onClick={onCloseCartBoxHandler}>
-                <Link href={"/cart"}>
-                  <a className="py-2 px-10 bg-palette-primary text-[12px] text-palette-side rounded-lg">
-                    {t.order}
-                  </a>
+                <Link
+                  href={"/cart"}
+                  className="py-2 px-10 bg-palette-primary text-[12px] text-palette-side rounded-lg">
+
+                  {t.order}
+
                 </Link>
               </div>
             )}
